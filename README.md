@@ -21,31 +21,19 @@ This project is a simple BI tool for managing and visualizing hotel rates data. 
     docker-compose up -d --build
     ```
 
-3. **Install PHP dependencies**
-
-    ```
-    docker-compose exec app composer install
-    ```
-
-4. **Install Node.js dependencies**
-
-    ```
-    docker-compose exec app yarn install
-    ```
-
-5. **Compile assets**
+3. **Compile assets**
 
     ```
     docker-compose exec app yarn build
     ```
 
-6. **Run migrations and seeders**
+4. **Run migrations and seeders**
 
     ```
     docker-compose exec app php artisan migrate --seed
     ```
 
-7. **Generate application key**
+5. **Generate application key**
 
     ```
     docker-compose exec app php artisan key:generate

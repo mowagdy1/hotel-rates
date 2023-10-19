@@ -15,9 +15,6 @@ class RateCollection extends ResourceCollection
     public function toArray(Request $request): array
     {
         return [
-//            'data' => $this->collection->map(function ($rate) {
-//                return new RateResource($rate);
-//            }),
             'data' => RateResource::collection($this->collection),
             'meta' => [
                 'total' => $this->total(),
