@@ -21,22 +21,10 @@ This project is a simple BI tool for managing and visualizing hotel rates data. 
     docker-compose up -d --build
     ```
 
-3. **Compile assets**
-
-    ```
-    docker-compose exec app yarn build
-    ```
-
-4. **Run migrations and seeders**
+3. **Run migrations and seeders**
 
     ```
     docker-compose exec app php artisan migrate --seed
-    ```
-
-5. **Generate application key**
-
-    ```
-    docker-compose exec app php artisan key:generate
     ```
 
 Your app should now be running on [http://localhost:8080](http://localhost:8080).

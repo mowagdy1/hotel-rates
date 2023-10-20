@@ -50,6 +50,7 @@ RUN chown -R newuser:newuser /var/www
 USER newuser
 
 COPY --chown=newuser:newuser . /var/www
+COPY --chown=newuser:newuser .env.dev /var/www/.env
 
 # Install composer dependencies
 RUN composer install
