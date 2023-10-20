@@ -38,10 +38,17 @@ class ScrapeHotelRates extends Command
      */
     public function handle(): void
     {
+        $this->comment('Starting..');
+
         $customers = $this->customerRepository->getWithHotels();
+        $this->comment('Scraping data for ' . count($customers) . ' customers.');
 
         foreach ($customers as $customer) {
+            $this->comment("Scraping for customer [$customer->name]..");
+
             foreach ($customer->hotels as $hotel) {
+                $this->comment(" - hotel [$hotel->name]..");
+
                 for ($i = 0; $i < 365; $i++) {
                     $this->rateRepository->create(
                         $hotel->id,
@@ -52,5 +59,6 @@ class ScrapeHotelRates extends Command
                 }
             }
         }
+        $this->comment('All customers done.');
     }
 }

@@ -42,4 +42,4 @@ The application has two main tabs:
 
 There is an ingestion service that runs every day at 1AM EST. This service scrapes 4 hotel booking websites (A, B, C, D) per customer and pulls data. The data is then stored in the database for further analysis by the BI tool.
 
-To run the ingestion service manually, you can use the `scrape:hotel-rates` command.
+To run the ingestion service manually, you can use the `docker-compose exec app php artisan scrape:hotel-rates` command.
